@@ -11,7 +11,7 @@ import java.time.LocalDate;
  *
  * @author claudio
  */
-public interface CalendarEvent {
+public interface Eventable {
     public String getTitle();
     public LocalDate getStartDate();
     public LocalDate getEndDate();
