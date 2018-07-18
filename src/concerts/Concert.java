@@ -6,6 +6,7 @@
 package concerts;
 
 import calendar.api.CalendarEvent;
+import calendar.api.CalendarEventException;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -28,7 +29,7 @@ public class Concert implements CalendarEvent {
     
     
     
-    //Ciao da Giulio, ho appena fatto un commit ^_^   
+    //Ciao da Giulio, ho appena fatto 2 commit ^_^   
     
     
     @Override
@@ -48,6 +49,11 @@ public class Concert implements CalendarEvent {
 
     @Override
     public String getCategory() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getLocation() throws CalendarEventException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
