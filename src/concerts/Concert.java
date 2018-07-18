@@ -35,7 +35,14 @@ public class Concert implements CalendarEvent {
         
     }
     
-    
+    @Override
+    public String toString() {
+        return  nomeConcerto + " " +
+                dataInizio + " " +
+                dataFine + " " +
+                luogo + " " +
+                categoria + " ";
+    }
     
     
     
