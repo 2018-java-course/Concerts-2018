@@ -15,6 +15,7 @@ import java.util.Date;
  */
 public class Concert implements CalendarEvent {
     
+    
     public String nomeConcerto;
     public Date dataInizio;
     public Date dataFine;
@@ -27,12 +28,7 @@ public class Concert implements CalendarEvent {
     
     
     
-    
-    
-    
-    
-    
-    
+    //Ciao da Giulio, ho appena fatto un commit ^_^   
     
     
     @Override
