@@ -6,6 +6,7 @@
 package concerts;
 
 import calendar.api.CalendarEvent;
+import calendar.api.CalendarEventException;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -16,11 +17,19 @@ import java.util.Date;
 public class Concert implements CalendarEvent {
     
     public String nomeConcerto;
-    public Date dataInizio;
-    public Date dataFine;
-    
+    public LocalDate dataInizio;
+    public LocalDate dataFine;
     public String luogo;
+    public final String categoria = "Concerto";
     
+    public Concert(String nomeConcerto, LocalDate dataInizio, LocalDate dataFine, String luogo) {
+        
+        this.nomeConcerto = nomeConcerto;
+        this.dataInizio = dataInizio;
+        this.dataFine = dataFine;
+        this.luogo = luogo;        
+        
+    }
     
     
     
@@ -37,22 +46,27 @@ public class Concert implements CalendarEvent {
     
     @Override
     public String getTitle() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.nomeConcerto;
     }
 
     @Override
     public LocalDate getStartDate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.dataInizio;
     }
 
     @Override
     public LocalDate getEndDate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.dataFine;
     }
 
     @Override
     public String getCategory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.categoria;
+    }
+
+    @Override
+    public String getLocation() throws CalendarEventException {
+        return this.luogo;
     }
     
 }
