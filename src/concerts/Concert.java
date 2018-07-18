@@ -21,14 +21,17 @@ public class Concert implements CalendarEvent {
     public LocalDate dataInizio;
     public LocalDate dataFine;
     public String luogo;
-    public final String categoria = "Concerto";
+    public String categoria;
+//    public Performer performer;
     
-    public Concert(String nomeConcerto, LocalDate dataInizio, LocalDate dataFine, String luogo) {
+    public Concert(String nomeConcerto, LocalDate dataInizio, LocalDate dataFine, String luogo, String categoria) {
         
         this.nomeConcerto = nomeConcerto;
         this.dataInizio = dataInizio;
         this.dataFine = dataFine;
-        this.luogo = luogo;        
+        this.luogo = luogo;   
+        this.categoria = categoria;
+//        this.performer = performer;
         
     }
     
