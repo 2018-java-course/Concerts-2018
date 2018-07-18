@@ -16,6 +16,7 @@ import java.util.Date;
  */
 public class Concert implements CalendarEvent {
     
+    
     public String nomeConcerto;
     public LocalDate dataInizio;
     public LocalDate dataFine;
@@ -36,12 +37,7 @@ public class Concert implements CalendarEvent {
     
     
     
-    
-    
-    
-    
-    
-    
+    //Ciao da Giulio, ho appena fatto 2 commit ^_^   
     
     
     @Override
@@ -67,6 +63,11 @@ public class Concert implements CalendarEvent {
     @Override
     public String getLocation() throws CalendarEventException {
         return this.luogo;
+    }
+
+    @Override
+    public String getLocation() throws CalendarEventException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
