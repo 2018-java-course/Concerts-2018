@@ -5,6 +5,7 @@
  */
 package main_class;
 
+import calendar.api.CalendarEvent;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -12,7 +13,7 @@ import java.util.Date;
  *
  * @author PC21
  */
-public class Concert implements Eventable {
+public class Concert implements CalendarEvent {
     
     public String nomeConcerto;
     public Date dataInizio;
