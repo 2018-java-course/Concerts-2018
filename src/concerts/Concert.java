@@ -65,9 +65,5 @@ public class Concert implements CalendarEvent {
         return this.luogo;
     }
 
-    @Override
-    public String getLocation() throws CalendarEventException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }
