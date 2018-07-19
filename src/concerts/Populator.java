@@ -51,8 +51,17 @@ public class Populator implements CalendarEventDatabase {
                 .setNomeConcerto("Smog Fest")
                 .build();
         
+        Concert concertoUnknown = new Concert.Builder()
+                .setCategoria("Indie")
+                .setDataFine(LocalDate.now().plusDays(3))
+                .setDataInizio(LocalDate.now())
+                .setLuogo("")
+                .setNomeConcerto("Sballo Fest")
+                .build();
+        
         events.add(concertoNapoli);
         events.add(concertoVenezia);
+        events.add(concertoUnknown);
         events.add(concertoRoma);
         events.add(concertoMilano);
         

@@ -9,8 +9,6 @@ import calendar.api.CalendarEvent;
 import calendar.api.CalendarEventException;
 import concerts.utils.EclipseTools;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -31,7 +29,6 @@ public class Main_Class {
 
         populator.populate(myArrayList);
 
-//        System.out.println("Array popolato: " + myArrayList);
         myArrayList.forEach((calendarEvent) -> {
             System.out.println(((Concert) calendarEvent).getDescription());
         });
@@ -40,13 +37,19 @@ public class Main_Class {
 
         myArrayList.forEach((calendarEvent) -> {
             try {
-                System.out.println("Location throws: " + ((Concert) calendarEvent).getLocation());
-            } catch (CalendarEventException ex) {
-                System.out.println("Location safe: " + ((Concert) calendarEvent).getLocationSafe());
 
-                Logger.getLogger(Main_Class.class.getName()).log(Level.SEVERE, null, ex);
+                ((Concert) calendarEvent).getLocation();
+
+            } catch (CalendarEventException ex) {
+                System.out.println("Il concerto "
+                        + ((Concert) calendarEvent).getTitle()
+                        + " non ha impostato un luogo, verrà impostato a "
+                        + ((Concert) calendarEvent).getLuogo());
+
             }
+
         });
+
     }
 
 }

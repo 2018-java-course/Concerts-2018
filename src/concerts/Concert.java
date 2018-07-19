@@ -15,33 +15,31 @@ import java.time.LocalDate;
  * @author PC21
  */
 public class Concert implements CalendarEvent, Displayable {
-    
+
     private String nomeConcerto;
     private LocalDate dataInizio;
     private LocalDate dataFine;
     private String luogo;
+
+    public String getLuogo() {
+        return luogo;
+    }
     private String categoria;
 
-    private Concert () {
-        
+    private Concert() {
+
     }
-    
-    
+
     @Override
     public String toString() {
-        return  "Nome: "+nomeConcerto + "\n" +
-                "Inizio: "+dataInizio + "\n" +
-                "Fina: "+dataFine + "\n" +
-                "Luogo: "+luogo + "\n" +
-                "Categoria: "+categoria + "\n";
+        return "Nome: " + nomeConcerto + "\n"
+                + "Inizio: " + dataInizio + "\n"
+                + "Fina: " + dataFine + "\n"
+                + "Luogo: " + luogo + "\n"
+                + "Categoria: " + categoria + "\n";
     }
-    
-    
-    
-    
+
     //Ciao da Giulio, ho appena fatto 2 commit ^_^   
-    
-    
     @Override
     public String getTitle() {
         return this.nomeConcerto;
@@ -63,7 +61,7 @@ public class Concert implements CalendarEvent, Displayable {
     }
 
     /**
-     * 
+     *
      * @return Luogo
      * @throws CalendarEventException
      * @deprecated use @getLocationSafe() to get throw handled
@@ -71,21 +69,26 @@ public class Concert implements CalendarEvent, Displayable {
     @Override
     @Deprecated
     public String getLocation() throws CalendarEventException {
-        
-        if (this.luogo.contains("e")) {
-            throw new CalendarEventException("Non mi piacciono le e. Ne hai messa una in " + this.luogo);
-        }   
-        
+
+        if (this.luogo.equals("")) {
+            this.luogo = "Unknown location";
+
+            throw new CalendarEventException("La location è vuota per " + this.nomeConcerto);
+
+        }
+
         return this.luogo;
     }
-    
-    public String getLocationSafe() {        
+
+    public String getLocationSafe() {
         try {
             return this.getLocation();
         } catch (CalendarEventException ex) {
-            System.err.println("Errore getLocation(), verrà resistuito un valore di default");
+            System.err.println("Errore getLocation(), il luogo verrà impostato e sostituito con Unknown Location");
         }
-        return "Unknown location";
+
+        this.luogo = "Unknown location";
+        return this.luogo;
     }
 
     @Override
@@ -93,15 +96,14 @@ public class Concert implements CalendarEvent, Displayable {
         return this.toString();
     }
 
-    
     public static class Builder {
-        
+
         private Concert concert;
-        
+
         public Builder() {
             this.concert = new Concert();
         }
-        
+
         public Builder setNomeConcerto(String nomeConcerto) {
             this.concert.nomeConcerto = nomeConcerto;
             return this;
@@ -130,7 +132,6 @@ public class Concert implements CalendarEvent, Displayable {
         public Concert build() {
             return this.concert;
         }
-    
-        
+
     }
 }

@@ -43,12 +43,12 @@ public class EclipseTools {
 
         @Override
         public void write(byte[] b, int off, int len) throws IOException {
-            if (lastStream!=this) swap();
+            if (lastStream != this) swap();
             target.write(b, off, len);
         }
 
         private void swap() throws IOException {
-            if (lastStream!=null) {
+            if (lastStream != null) {
                 lastStream.flush();
                 try { Thread.sleep(200); } catch (InterruptedException e) {}
             }
