@@ -64,17 +64,15 @@ public class Concert implements CalendarEvent, Displayable {
      *
      * @return Luogo
      * @throws CalendarEventException
-     * @deprecated use @getLocationSafe() to get throw handled
      */
+    
     @Override
-    @Deprecated
     public String getLocation() throws CalendarEventException {
 
         if (this.luogo.equals("")) {
             this.luogo = "Unknown location";
 
             throw new CalendarEventException("La location è vuota per " + this.nomeConcerto);
-
         }
 
         return this.luogo;
