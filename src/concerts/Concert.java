@@ -7,41 +7,46 @@ package concerts;
 
 import calendar.api.CalendarEvent;
 import calendar.api.CalendarEventException;
+import calendar.api.Displayable;
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  *
  * @author PC21
  */
-public class Concert implements CalendarEvent {
+public class Concert implements CalendarEvent, Displayable {
     
-    
-    public String nomeConcerto;
-    public LocalDate dataInizio;
-    public LocalDate dataFine;
-    public String luogo;
-    public String categoria;
+    private String nomeConcerto;
+    private LocalDate dataInizio;
+    private LocalDate dataFine;
+    private String luogo;
+    private String categoria;
 //  public Performer performer;
     
-    public Concert(String nomeConcerto, LocalDate dataInizio, LocalDate dataFine, String luogo, String categoria) {
-        
-        this.nomeConcerto = nomeConcerto;
-        this.dataInizio = dataInizio;
-        this.dataFine = dataFine;
-        this.luogo = luogo;   
-        this.categoria = categoria;
-//      this.performer = performer;
+//    private Concert(String nomeConcerto, LocalDate dataInizio, LocalDate dataFine, String luogo, String categoria) {
+//        
+////        this.nomeConcerto = nomeConcerto;
+////        this.dataInizio = dataInizio;
+////        this.dataFine = dataFine;
+////        this.luogo = luogo;   
+////        this.categoria = categoria;
+//////      this.performer = performer;
+//        
+//    }
+//    
+    
+    private Concert () {
         
     }
     
+    
     @Override
     public String toString() {
-        return  nomeConcerto + " " +
-                dataInizio + " " +
-                dataFine + " " +
-                luogo + " " +
-                categoria + " ";
+        return  "Nome: "+nomeConcerto + "\n" +
+                "Inizio: "+dataInizio + "\n" +
+                "Fina: "+dataFine + "\n" +
+                "Luogo: "+luogo + "\n" +
+                "Categoria: "+categoria + "\n";
     }
     
     
@@ -75,5 +80,49 @@ public class Concert implements CalendarEvent {
         return this.luogo;
     }
 
+    @Override
+    public String getDescription() {
+        return this.toString();
+    }
+
     
+    public static class Builder {
+        
+        private Concert concert;
+        
+        public Builder() {
+            this.concert = new Concert();
+        }
+        
+        public Builder setNomeConcerto(String nomeConcerto) {
+            this.concert.nomeConcerto = nomeConcerto;
+            return this;
+        }
+
+        public Builder setDataInizio(LocalDate dataInizio) {
+            this.concert.dataInizio = dataInizio;
+            return this;
+        }
+
+        public Builder setDataFine(LocalDate dataFine) {
+            this.concert.dataFine = dataFine;
+            return this;
+        }
+
+        public Builder setLuogo(String luogo) {
+            this.concert.luogo = luogo;
+            return this;
+        }
+
+        public Builder setCategoria(String categoria) {
+            this.concert.categoria = categoria;
+            return this;
+        }
+
+        public Concert build() {
+            return this.concert;
+        }
+    
+        
+    }
 }
