@@ -22,7 +22,7 @@ public class Concert implements CalendarEvent {
     public LocalDate dataFine;
     public String luogo;
     public String categoria;
-//    public Performer performer;
+//  public Performer performer;
     
     public Concert(String nomeConcerto, LocalDate dataInizio, LocalDate dataFine, String luogo, String categoria) {
         
@@ -31,7 +31,7 @@ public class Concert implements CalendarEvent {
         this.dataFine = dataFine;
         this.luogo = luogo;   
         this.categoria = categoria;
-//        this.performer = performer;
+//      this.performer = performer;
         
     }
     
