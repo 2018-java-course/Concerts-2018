@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main_class;
+package concerts;
 
 /**
  *
  * @author PC21
  */
-public class Main_Class {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class Solista extends Performer {
+    
+    public Solista (String nome, double cachet) {
+        super(nome, cachet);
     }
     
 }
