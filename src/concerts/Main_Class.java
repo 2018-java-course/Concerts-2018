@@ -6,9 +6,8 @@
 package concerts;
 
 import calendar.api.CalendarEvent;
-import calendar.api.CalendarEventDatabase;
 import calendar.api.CalendarEventException;
-import java.time.LocalDate;
+import concerts.utils.EclipseTools;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,18 +23,30 @@ public class Main_Class {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        EclipseTools.fixConsole();
+
         ArrayList<CalendarEvent> myArrayList = new ArrayList<>();
-        
+
         Populator populator = new Populator();
-        
+
         populator.populate(myArrayList);
-        
-        System.out.println("Array popolato: " + myArrayList);
 
+//        System.out.println("Array popolato: " + myArrayList);
+        myArrayList.forEach((calendarEvent) -> {
+            System.out.println(((Concert) calendarEvent).getDescription());
+        });
 
+        System.out.println("--------------------");
+
+        myArrayList.forEach((calendarEvent) -> {
+            try {
+                System.out.println("Location throws: " + ((Concert) calendarEvent).getLocation());
+            } catch (CalendarEventException ex) {
+                System.out.println("Location safe: " + ((Concert) calendarEvent).getLocationSafe());
+
+                Logger.getLogger(Main_Class.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
     }
-
-    
 
 }

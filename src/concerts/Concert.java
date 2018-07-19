@@ -21,20 +21,7 @@ public class Concert implements CalendarEvent, Displayable {
     private LocalDate dataFine;
     private String luogo;
     private String categoria;
-//  public Performer performer;
-    
-//    private Concert(String nomeConcerto, LocalDate dataInizio, LocalDate dataFine, String luogo, String categoria) {
-//        
-////        this.nomeConcerto = nomeConcerto;
-////        this.dataInizio = dataInizio;
-////        this.dataFine = dataFine;
-////        this.luogo = luogo;   
-////        this.categoria = categoria;
-//////      this.performer = performer;
-//        
-//    }
-//    
-    
+
     private Concert () {
         
     }
@@ -75,9 +62,30 @@ public class Concert implements CalendarEvent, Displayable {
         return this.categoria;
     }
 
+    /**
+     * 
+     * @return Luogo
+     * @throws CalendarEventException
+     * @deprecated use @getLocationSafe() to get throw handled
+     */
     @Override
+    @Deprecated
     public String getLocation() throws CalendarEventException {
+        
+        if (this.luogo.contains("e")) {
+            throw new CalendarEventException("Non mi piacciono le e. Ne hai messa una in " + this.luogo);
+        }   
+        
         return this.luogo;
+    }
+    
+    public String getLocationSafe() {        
+        try {
+            return this.getLocation();
+        } catch (CalendarEventException ex) {
+            System.err.println("Errore getLocation(), verrà resistuito un valore di default");
+        }
+        return "Unknown location";
     }
 
     @Override

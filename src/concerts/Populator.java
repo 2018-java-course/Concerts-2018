@@ -52,9 +52,9 @@ public class Populator implements CalendarEventDatabase {
                 .build();
         
         events.add(concertoNapoli);
+        events.add(concertoVenezia);
         events.add(concertoRoma);
         events.add(concertoMilano);
-        events.add(concertoVenezia);
         
 
     }
