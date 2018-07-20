@@ -13,7 +13,7 @@ public abstract class Performer {
     
     public String nome;
     public double cachet;
-    
+
     public Performer (String nome, double cachet) {
         
         this.nome = nome;

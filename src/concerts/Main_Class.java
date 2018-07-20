@@ -37,19 +37,13 @@ public class Main_Class {
 
         myArrayList.forEach((calendarEvent) -> {
             try {
-
-                ((Concert) calendarEvent).getLocation();
-
+               String ignored = ((Concert) calendarEvent).getLocation();
             } catch (CalendarEventException ex) {
                 System.out.println("Il concerto "
                         + ((Concert) calendarEvent).getTitle()
                         + " non ha impostato un luogo, verrà impostato a "
                         + ((Concert) calendarEvent).getLuogo());
-
             }
-
         });
-
     }
-
 }
