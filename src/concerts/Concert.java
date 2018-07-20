@@ -90,10 +90,11 @@ public class Concert implements CalendarEvent, Displayable {
         return this.luogo;
     }
 
-//    @Override
-//    public String getDescription() {
-//        return this.toString();
-//    }
+
+    @Override
+    public String getDescription() {
+        return this.toString();
+    }
 
     public static class Builder {
 
