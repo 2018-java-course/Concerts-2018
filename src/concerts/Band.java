@@ -21,7 +21,7 @@ public class Band extends Performer {
 
     @Override
     public String toString() {
-        return super.toString() + "Componenti: " + numComponenti;
+        return super.toString() + ", Componenti: " + numComponenti;
     }
     
     
