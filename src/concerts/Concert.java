@@ -21,9 +21,6 @@ public class Concert implements CalendarEvent, Displayable {
     private LocalDate dataFine;
     private String luogo;
 
-    public String getLuogo() {
-        return luogo;
-    }
     private String categoria;
 
     private Concert() {
@@ -59,6 +56,10 @@ public class Concert implements CalendarEvent, Displayable {
     public String getCategory() {
         return this.categoria;
     }
+    
+    public String getLuogo() {
+        return luogo;
+    }
 
     /**
      *
@@ -89,17 +90,23 @@ public class Concert implements CalendarEvent, Displayable {
         return this.luogo;
     }
 
-    @Override
-    public String getDescription() {
-        return this.toString();
-    }
+//    @Override
+//    public String getDescription() {
+//        return this.toString();
+//    }
 
     public static class Builder {
 
-        private Concert concert;
+        private final Concert concert;
 
         public Builder() {
             this.concert = new Concert();
+            this.concert.nomeConcerto = "Nome da costruttore";
+            this.concert.luogo = "Luogo concerto da costruttore";
+            this.concert.dataInizio = LocalDate.now().plusDays(1);
+            this.concert.dataFine = LocalDate.now().plusDays(4);
+            this.concert.categoria = "Categoria da costruttore";
+            
         }
 
         public Builder setNomeConcerto(String nomeConcerto) {
@@ -132,4 +139,5 @@ public class Concert implements CalendarEvent, Displayable {
         }
 
     }
+    
 }
