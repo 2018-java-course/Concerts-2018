@@ -20,6 +20,12 @@ public abstract class Performer {
         this.cachet = cachet;
         
     }
+
+    @Override
+    public String toString() {
+        return this.nome;
+    }
+    
     
     
 }

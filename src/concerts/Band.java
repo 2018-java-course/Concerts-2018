@@ -18,6 +18,11 @@ public class Band extends Performer {
         super(nome, cachet);
         this.numComponenti = numComponenti;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Componenti: " + numComponenti;
+    }
     
     
 }
