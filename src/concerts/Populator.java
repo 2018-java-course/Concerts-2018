@@ -78,13 +78,10 @@ public class Populator implements CalendarEventDatabase {
                 System.out.println("Il concerto "
                         + ((Concert) calendarEvent).getTitle()
                         + " non ha impostato un luogo, verrà impostato a "
-                        + ((Concert) calendarEvent).getLuogo()
-                        + "\n");
-                        
-            }
-            
-            
+                        + ((Concert) calendarEvent).getLuogo());                        
+            }          
         });
+        events.sort((o1, o2) -> o1.getStartDate().compareTo(o2.getStartDate()));
 
     }
 }
