@@ -71,16 +71,16 @@ public class Populator implements CalendarEventDatabase {
         events.add(concertoRoma);
         events.add(concertoMilano);
         
-        events.forEach((calendarEvent) -> {
-            try {
-               String ignored = ((Concert) calendarEvent).getLocation();
-            } catch (CalendarEventException ex) {
-                System.out.println("Il concerto "
-                        + ((Concert) calendarEvent).getTitle()
-                        + " non ha impostato un luogo, verrà impostato a "
-                        + ((Concert) calendarEvent).getLuogo());                        
-            }          
-        });
+//        events.forEach((calendarEvent) -> {
+//            try {
+//               String ignored = ((Concert) calendarEvent).getLocation();
+//            } catch (CalendarEventException ex) {
+//                System.out.println("Il concerto "
+//                        + ((Concert) calendarEvent).getTitle()
+//                        + " non ha impostato un luogo, verrà impostato a "
+//                        + ((Concert) calendarEvent).getLuogo());                        
+//            }          
+//        });
         events.sort((o1, o2) -> o1.getStartDate().compareTo(o2.getStartDate()));
 
     }
