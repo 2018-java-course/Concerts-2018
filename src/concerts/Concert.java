@@ -30,7 +30,7 @@ public class Concert implements CalendarEvent, Displayable {
                 + "Fine: " + dataFine + "\n"
                 + "Luogo: " + luogo + "\n"
                 + "Categoria: " + categoria + "\n"
-                + "Performer: " + performer + "\n";
+                + "Performer: " + performer;
     }
 
     //Ciao da Giulio, ho appena fatto 2 commit ^_^   

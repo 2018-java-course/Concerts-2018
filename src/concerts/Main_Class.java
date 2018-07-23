@@ -28,12 +28,28 @@ public class Main_Class {
         Populator populator = new Populator();
         populator.populate(myArrayList);
 
-        myArrayList.sort((o1, o2) -> {
-            return o1.getStartDate().compareTo(o2.getStartDate());
+      myArrayList.forEach((calendarEvent) -> {
+            try {
+               String ignored = ((Concert) calendarEvent).getLocation();
+            } catch (CalendarEventException ex) {
+                System.out.println("Il concerto "
+                        + ((Concert) calendarEvent).getTitle()
+                        + " non ha impostato un luogo, verrà impostato a "
+                        + ((Concert) calendarEvent).getLuogo());                        
+            }          
         });
+        
+        
+//        myArrayList.sort((o1, o2) -> {
+//            return o1.getStartDate().compareTo(o2.getStartDate());
+//        });       
+        myArrayList.sort((o1, o2) -> o1.getStartDate().compareTo(o2.getStartDate()));
+        
+        
         
         myArrayList.forEach((calendarEvent) -> {
             System.out.println(((Concert) calendarEvent).getDescription());
+            System.out.println("");
         });
 
     }

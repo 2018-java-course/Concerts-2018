@@ -25,7 +25,4 @@ public abstract class Performer {
     public String toString() {
         return this.nome;
     }
-    
-    
-    
 }
