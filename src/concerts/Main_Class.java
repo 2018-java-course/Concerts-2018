@@ -39,13 +39,7 @@ public class Main_Class {
             }          
         });
         
-        
-//        myArrayList.sort((o1, o2) -> {
-//            return o1.getStartDate().compareTo(o2.getStartDate());
-//        });       
-        myArrayList.sort((o1, o2) -> o1.getStartDate().compareTo(o2.getStartDate()));
-        
-        
+        myArrayList.sort((o1, o2) -> o1.getStartDate().compareTo(o2.getStartDate()));      
         
         myArrayList.forEach((calendarEvent) -> {
             System.out.println(((Concert) calendarEvent).getDescription());

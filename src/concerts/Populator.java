@@ -84,10 +84,6 @@ public class Populator implements CalendarEventDatabase {
             }
         });
 
-//        if (events.size() > 0) {
-//            if (events.get(0) instanceof Concert) {
-//                events.sort((o1, o2) -> o1.getStartDate().compareTo(o2.getStartDate()));
-//            }
-//        }
+
     }
 }

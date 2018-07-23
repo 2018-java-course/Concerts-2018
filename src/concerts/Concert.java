@@ -33,7 +33,7 @@ public class Concert implements CalendarEvent, Displayable {
                 + "Performer: " + performer;
     }
 
-    //Ciao da Giulio, ho appena fatto 2 commit ^_^   
+
     @Override
     public String getTitle() {
         return this.nomeConcerto;
