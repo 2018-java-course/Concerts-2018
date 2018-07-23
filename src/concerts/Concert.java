@@ -23,15 +23,11 @@ public class Concert implements CalendarEvent, Displayable {
     private String categoria;
     private Performer performer;
 
-    private Concert() {
-
-    }
-
     @Override
     public String toString() {
         return "Nome: " + nomeConcerto + "\n"
                 + "Inizio: " + dataInizio + "\n"
-                + "Fina: " + dataFine + "\n"
+                + "Fine: " + dataFine + "\n"
                 + "Luogo: " + luogo + "\n"
                 + "Categoria: " + categoria + "\n"
                 + "Performer: " + performer + "\n";
